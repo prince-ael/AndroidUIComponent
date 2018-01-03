@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFF"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+
+    <TextView
+        android:id="@+id/tv_label_fn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#4A148C"
+        android:fontFamily="sans-serif-regular"
+        android:text="First Name : "
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_label_ln"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#4A148C"
+        android:fontFamily="sans-serif-regular"
+        android:text="Last Name : "
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_fn"/>
+
+    <TextView
+        android:id="@+id/tv_label_dob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#4A148C"
+        android:fontFamily="sans-serif-regular"
+        android:text="Date Of Birth : "
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_label_ln"/>
+
+    <TextView
+        android:id="@+id/tv_first_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#000"
+        android:fontFamily="sans-serif-regular"
+        tools:text="Liara"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintLeft_toRightOf="@id/tv_label_fn"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_last_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#000"
+        android:fontFamily="sans-serif-regular"
+        tools:text="Williams"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toRightOf="@id/tv_label_ln"
+        app:layout_constraintTop_toBottomOf="@id/tv_first_name"/>
+
+    <TextView
+        android:id="@+id/tv_dob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="#000"
+        android:fontFamily="sans-serif-regular"
+        tools:text="02/10/2020"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_last_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_last_name"/>
+
+    <TextView
+        android:id="@+id/tv_itemNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="#000"
+        android:fontFamily="sans-serif-regular"
+        tools:text="Item No : 01"
+        android:layout_marginTop="8dp"
+        app:layout_constraintLeft_toLeftOf="@id/tv_dob"
+        app:layout_constraintTop_toBottomOf="@id/tv_dob"/>
+
+</android.support.constraint.ConstraintLayout>

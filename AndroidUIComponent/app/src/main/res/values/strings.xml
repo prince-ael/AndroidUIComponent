@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidUIComponent</string>
+    <string name="recyclerView_activity">RecyclerView Activity</string>
+</resources>
