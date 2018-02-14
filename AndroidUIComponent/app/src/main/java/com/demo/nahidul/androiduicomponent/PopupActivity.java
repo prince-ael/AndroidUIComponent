@@ -1,26 +1,39 @@
 package com.demo.nahidul.androiduicomponent;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+
+import java.io.ByteArrayOutputStream;
 
 public class PopupActivity extends AppCompatActivity {
 
     private TextView mLastName;
     private TextView mFirstName;
     private TextView mDOB;
+    private TextView mCpNotes;
 
     private Button showPopup;
+
+    private ImageView test1ImgView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +41,35 @@ public class PopupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_popup);
 
         showPopup = findViewById(R.id.btn_popup_window);
+        mCpNotes = findViewById(R.id.tv_cp_notes1);
+
+        SpannableStringBuilder ssb = new SpannableStringBuilder(mCpNotes.getText());
+        ssb.setSpan(new ForegroundColorSpan(Color.parseColor("#003663")), 0 , 5, SpannableStringBuilder.SPAN_EXCLUSIVE_EXCLUSIVE);
+        mCpNotes.setText(ssb);
 
         getSupportActionBar().setTitle("Popup Window Activity");
+
+        /*Test On Using Glide Library*/
+        test1ImgView = findViewById(R.id.iv_test1);
+
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.koala_bear);
+
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+
+        Glide.with(this)
+                .load(stream.toByteArray())
+                .asBitmap()
+                .error(R.drawable.ic_preview)
+                .into(test1ImgView);
+
     }
 
     public void showPopupWindow(View view) {
+
+        final CheckBox cb = findViewById(R.id.cb_test);
+        cb.setEnabled(true);
 
         LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
 
@@ -57,6 +94,7 @@ public class PopupActivity extends AppCompatActivity {
 
                 showPopup.setText(mLastName.getText());
                 popupWindow.dismiss();
+                cb.setEnabled(false);
             }
         });
 
@@ -66,6 +104,7 @@ public class PopupActivity extends AppCompatActivity {
 
                 showPopup.setText(mFirstName.getText());
                 popupWindow.dismiss();
+                cb.setEnabled(true);
             }
         });
 
@@ -75,6 +114,7 @@ public class PopupActivity extends AppCompatActivity {
 
                 showPopup.setText(mDOB.getText());
                 popupWindow.dismiss();
+                cb.setEnabled(false);
             }
         });
 

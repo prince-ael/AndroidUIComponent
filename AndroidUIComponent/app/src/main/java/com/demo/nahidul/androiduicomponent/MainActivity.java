@@ -29,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
         mComponentAdapter.addComponentAndHost("Load More RecyclerView2",
                 new Intent(MainActivity.this,RecyclerViewActivity.class));
 
+        mComponentAdapter.addComponentAndHost("ViewPager",
+                new Intent(MainActivity.this,ViewPagerActivity.class));
+
+        mComponentAdapter.addComponentAndHost("Sliding Up Panel",
+                new Intent(MainActivity.this,SlidingUpPanelActivity.class));
 
         mComponentRecyclerView = findViewById(R.id.rv_ui_components);
 

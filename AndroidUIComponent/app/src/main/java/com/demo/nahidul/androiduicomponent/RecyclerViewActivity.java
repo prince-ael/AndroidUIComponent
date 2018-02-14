@@ -11,6 +11,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.demo.nahidul.androiduicomponent.adapters.LoadMoreAdapter;
+import com.demo.nahidul.androiduicomponent.interfaces.AdapterListener;
+import com.demo.nahidul.androiduicomponent.models.FakeModel;
+
 /*
 * This Activity Holds A RecyclerView That Loads Data When It Scrolls To Its Bottom End
 * Primary purpose of this activity is to detect the event when user scrolls to the bottom end of a recycler view.

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.demo.nahidul.androiduicomponent.FakeModel;
+import com.demo.nahidul.androiduicomponent.models.FakeModel;
 import com.demo.nahidul.androiduicomponent.R;
 
 import java.util.List;

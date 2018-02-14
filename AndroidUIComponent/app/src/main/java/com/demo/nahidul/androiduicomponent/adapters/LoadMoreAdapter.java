@@ -1,17 +1,17 @@
-package com.demo.nahidul.androiduicomponent;
+package com.demo.nahidul.androiduicomponent.adapters;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.demo.nahidul.androiduicomponent.interfaces.AdapterListener;
+import com.demo.nahidul.androiduicomponent.R;
+import com.demo.nahidul.androiduicomponent.models.FakeModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
  * Created by nahidul on 28/12/17.
  */
 
-class LoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+public class LoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private Context mContext;
     private List<FakeModel> models;
@@ -148,6 +148,7 @@ class LoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         @Override
         public void onClick(View view) {
             Toast.makeText(mContext, "Adapter Position "+getAdapterPosition(), Toast.LENGTH_SHORT).show();
+            remove(getAdapterPosition());
         }
     }
 
@@ -161,5 +162,10 @@ class LoadMoreAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         }
     }
 
+    private void remove(int position){
 
+        models.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position, models.size());
+    }
 }

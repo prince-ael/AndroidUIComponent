@@ -1,4 +1,4 @@
-package com.demo.nahidul.androiduicomponent;
+package com.demo.nahidul.androiduicomponent.models;
 
 /**
  * Created by nahidul on 28/12/17.

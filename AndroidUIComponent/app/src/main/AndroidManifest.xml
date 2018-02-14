@@ -20,7 +20,9 @@
         <activity
             android:name=".RecyclerViewActivity"
             android:label="@string/recyclerView_activity" />
-        <activity android:name=".implementation_from_outsrc.RVActivity"></activity>
+        <activity android:name=".implementation_from_outsrc.RVActivity" />
+        <activity android:name=".ViewPagerActivity" />
+        <activity android:name=".SlidingUpPanelActivity"></activity>
     </application>
 
 </manifest>

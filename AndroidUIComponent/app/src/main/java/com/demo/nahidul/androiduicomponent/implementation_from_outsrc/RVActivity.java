@@ -7,10 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
-import com.demo.nahidul.androiduicomponent.FakeModel;
-import com.demo.nahidul.androiduicomponent.MainActivity;
+import com.demo.nahidul.androiduicomponent.models.FakeModel;
 import com.demo.nahidul.androiduicomponent.R;
-import com.demo.nahidul.androiduicomponent.RecyclerViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
