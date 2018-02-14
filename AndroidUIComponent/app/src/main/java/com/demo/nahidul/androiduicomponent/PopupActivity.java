@@ -52,17 +52,6 @@ public class PopupActivity extends AppCompatActivity {
         /*Test On Using Glide Library*/
         test1ImgView = findViewById(R.id.iv_test1);
 
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.koala_bear);
-
-
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
-
-        Glide.with(this)
-                .load(stream.toByteArray())
-                .asBitmap()
-                .error(R.drawable.ic_preview)
-                .into(test1ImgView);
 
     }
 
